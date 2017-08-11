@@ -8,19 +8,20 @@
 	<link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-	<div class="bigbox">
-		<div class="searchbox">
+	<header class="bigbox">
+		<section class="searchbox">
 			<input class="search" data-bind="textInput: keyWord" placeholder="Search for Places...">
-		</div>
-		<div class="list">
-			<ul class="output" data-bind="visible:keyWord, foreach: filterCountry">
+		</section>
+		<section class="list">
+			<ul class="output" data-bind="keyWord, foreach: filterCountry">
 				<li class="place" data-bind="text: country, click: bounce"></li>
 			</ul>
-		</div>
-	</div>
-	<div class="foursquarelogo">
-	<img src="img/foursquare.png" alt="Foursquare logo"></div>
-	<div class="map" id="map"></div>
+		</section>
+	</header>
+	<footer class="foursquarelogo">
+	<img src="img/foursquare.png" alt="Foursquare logo">
+	</footer>
+	<main class="map" id="map"></main>
 
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js'>
 	</script>

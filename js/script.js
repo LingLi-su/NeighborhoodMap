@@ -85,9 +85,11 @@ var Location = function(data) {
 		$.getJSON(fourSquarePic).done(function(data) {
 			var output = data.response.photos.items[0];
 			self.img = output.prefix + '100x100' + output.suffix;
+		}).fail(function() {
+			alert("Foursquare Image API call error. Please come back Later!");
 		});
 	}).fail(function() {
-		alert("Foursquare API call error. Come back Later!");
+		alert("Foursquare Address API call error. Please come back Later!");
 	});
 	// resize map
 	google.maps.event.addDomListener(window, "resize", function() {
@@ -150,4 +152,3 @@ function viewStart() {
 function error() {
 	alert("Oops, Come Back Later!");
 }
-
